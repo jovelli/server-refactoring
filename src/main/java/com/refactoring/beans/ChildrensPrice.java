@@ -2,7 +2,7 @@ package com.refactoring.beans;
 
 public class ChildrensPrice extends Price {
     @Override
-    double getCharge(int daysRented) {
+    public double getCharge(int daysRented) {
         double amount = 1.5;
 
         if (daysRented > 3) {
