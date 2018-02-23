@@ -1,4 +1,5 @@
 package com.refactoring.examples.duplicateObservedData;
+
 import java.awt.*;
 import java.awt.event.*;
 
@@ -88,5 +89,3 @@ public class PathLengthFrame extends Frame implements Observer {
         return str.matches("-?\\d+(\\.\\d+)?");
     }
 }
-
-
