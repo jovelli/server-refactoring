@@ -1,6 +1,5 @@
 package com.refactoring.examples.duplicateObservedData;
 
-
 import java.util.Observable;
 
 public class PathLength extends Observable {
@@ -46,5 +45,4 @@ public class PathLength extends Observable {
         setChanged();
         notifyObservers();
     }
-
 }
