@@ -4,12 +4,15 @@ import com.refactoring.beans.ChildrensPrice;
 import com.refactoring.beans.NewReleasePrice;
 import com.refactoring.beans.Price;
 import com.refactoring.beans.RegularPrice;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Refactorings {
 
+    private static final Logger LOGGER = LogManager.getLogger(Refactorings.class);
     private String name = "John";
     private static List<Price> locations = new ArrayList();
     private int quantity = 10;
@@ -27,7 +30,7 @@ public class Refactorings {
         double outstanding = getOutstanding(amount * 1.3);
         printDetails(outstanding);
 
-        System.out.println("getPrice: " + getPrice());
+        LOGGER.info("getPrice: " + getPrice());
     }
 
     private double getPrice() {
@@ -46,18 +49,18 @@ public class Refactorings {
     }
 
     private void printDetails(double outstanding) {
-        System.out.println("Name: " + name);
-        System.out.println("Amount: " + outstanding);
+        LOGGER.info("Name: " + name);
+        LOGGER.info("Amount: " + outstanding);
     }
 
     private void printBanner() {
-        System.out.println("******************************");
-        System.out.println("*********Customer Owes********");
-        System.out.println("******************************");
+        LOGGER.info("******************************");
+        LOGGER.info("*********Customer Owes********");
+        LOGGER.info("******************************");
     }
 
     public void getComplicatedPrice() {
-        System.out.println("getCompicatePrice " + (getBasePrice() - getQuantityDiscount() + getShipping()));
+        LOGGER.info("getComplicatedPrice " + (getBasePrice() - getQuantityDiscount() + getShipping()));
     }
 
     private double getBasePrice() { return quantity * itemPrice; }
