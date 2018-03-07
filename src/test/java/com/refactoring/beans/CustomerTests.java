@@ -14,11 +14,11 @@ public class CustomerTests {
     @Test
     public void statement() {
         Customer customer = new Customer("Jordí Llimarez");
-        Movie movie1 = new Movie("Shinning", 1);
-        Movie movie2 = new Movie("Shrek movie", 0);
-        Movie movie3 = new Movie("Exorcist", 1);
-        Movie movie4 = new Movie("Blade Runner", 1);
-        Movie movie5 = new Movie("Annie Hall", 0);
+        Movie movie1 = new Movie("Shinning", new NewReleasePrice());
+        Movie movie2 = new Movie("Shrek movie", new RegularPrice());
+        Movie movie3 = new Movie("Exorcist", new NewReleasePrice());
+        Movie movie4 = new Movie("Blade Runner", new NewReleasePrice());
+        Movie movie5 = new Movie("Annie Hall",  new RegularPrice());
 
         Rental rental1 = new Rental(movie1, 2);
         Rental rental2 = new Rental(movie2, 4);

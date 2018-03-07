@@ -19,10 +19,10 @@ public class Refactorings {
     private double itemPrice =  15.0;
 
     {
-        locations.add(new RegularPrice());
-        locations.add(new RegularPrice());
-        locations.add(new ChildrensPrice());
-        locations.add(new NewReleasePrice());
+        locations.add(Price.createRegular());
+        locations.add(Price.createRegular());
+        locations.add(Price.createChildren());
+        locations.add(Price.createNewRelease());
     }
 
     public void printOwing(double amount) {
