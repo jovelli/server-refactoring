@@ -1,12 +1,17 @@
 package com.refactoring.examples.separatequerymodifier;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class QueryAndModifier {
 
     private static final String personFound1 = "John";
     private static final String personFound2 = "Mike";
 
-    public String getSendAlert(String[] people) {
-        return findWrongPeople(people);
+    private static final Logger LOGGER = LogManager.getLogger(QueryAndModifier.class);
+
+    public void sendAlert(String[] people) {
+        LOGGER.info(findWrongPeople(people));
     }
 
     private String findWrongPeople(String[] people) {

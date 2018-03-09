@@ -1,14 +1,15 @@
 package com.refactoring;
 
+import com.refactoring.examples.Refactorings;
 import com.refactoring.examples.conditionals.DecomposeConditional;
 import com.refactoring.examples.datavaluetoobject.Order;
 import com.refactoring.examples.encapsulatecollections.Studant;
 import com.refactoring.examples.hidedelegate.Person;
 import com.refactoring.examples.methodobject.MethodObject;
-import com.refactoring.examples.Refactorings;
 import com.refactoring.examples.movemethod.Account;
-
 import com.refactoring.examples.parameterbymethod.Price;
+import com.refactoring.examples.parameterobject.BillManager;
+import com.refactoring.examples.parameterobject.DateRange;
 import com.refactoring.examples.separatequerymodifier.QueryAndModifier;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -43,9 +44,14 @@ public class ServerRefactoringApplication {
 			LOGGER.info("Decompose Conditionals [" +
 					new DecomposeConditional(LocalDate.of(2017, 12, 22)).charge(100) + "]");
 
-			LOGGER.info("Separate modifier and setter - Found [" + new QueryAndModifier()
-					.getSendAlert(new String[]{"Mike", "Mary", "James"}) + "]");
+			LOGGER.info("Separate modifier and setter - Found");
+			new QueryAndModifier().sendAlert(new String[]{"Mike", "Mary", "James"});
 
 			LOGGER.info("Replace parameter by method [" + new Price(100.00, 10).getPrice() + "]");
+
+			LocalDate start = LocalDate.of(2010, 01, 01);
+			LocalDate end = LocalDate.of(2010, 12, 01);
+			DateRange dateRange = new DateRange(start, end);
+			LOGGER.info("Replace parameter by object [" + new BillManager().getEntriesBetween(dateRange) + "]");
 	}
 }
