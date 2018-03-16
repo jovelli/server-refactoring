@@ -9,7 +9,10 @@ import org.junit.Assert;
 public class CustomerTests {
 
     private String statement = "Rental Record for Jordí Llimarez\nShinning\tprice=6.0\nShrek movie\tprice=5.0\n" +
-            "Exorcist\tprice=3.0\nBlade Runner\tprice=18.0\nAnnie Hall\tprice=2.0\n\nAmount owed is 34.0\nYou earned: 7";
+            "Exorcist\tprice=3.0\nBlade Runner\tprice=18.0\nAnnie Hall\tprice=2.0\n\nAmount owed is: 34.0\nYou earned: 7";
+
+    private String htmlStatement = "<html><b>Rental Record for </b>Jordí Llimarez\n<b>Shinning</b>\tprice=6.0\n<b>Shrek movie</b>\tprice=5.0\n" +
+            "<b>Exorcist</b>\tprice=3.0\n<b>Blade Runner</b>\tprice=18.0\n<b>Annie Hall</b>\tprice=2.0\n\n<b>Amount owed is: </b>34.0\n<b>You earned: </b>7</html>";
 
     @Test
     public void statement() {
@@ -32,7 +35,8 @@ public class CustomerTests {
         customer.addRental(rental4);
         customer.addRental(rental5);
 
-        Assert.assertEquals(statement, customer.statement());
+        Assert.assertEquals(statement, customer.textStatement());
+        Assert.assertEquals(htmlStatement, customer.htmlStatement());
     }
 
 }

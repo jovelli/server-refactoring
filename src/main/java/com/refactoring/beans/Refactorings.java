@@ -1,6 +1,5 @@
-package com.refactoring.examples;
+package com.refactoring.beans;
 
-import com.refactoring.beans.Price;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -56,8 +55,8 @@ public class Refactorings {
         LOGGER.info("******************************");
     }
 
-    public void getComplicatedPrice() {
-        LOGGER.info("getComplicatedPrice " + (getBasePrice() - getQuantityDiscount() + getShipping()));
+    public double getComplicatedPrice() {
+        return getBasePrice() - getQuantityDiscount() + getShipping();
     }
 
     private double getBasePrice() { return quantity * itemPrice; }
