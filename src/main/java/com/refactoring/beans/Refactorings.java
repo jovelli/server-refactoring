@@ -1,9 +1,6 @@
 package com.refactoring.examples;
 
-import com.refactoring.beans.ChildrensPrice;
-import com.refactoring.beans.NewReleasePrice;
 import com.refactoring.beans.Price;
-import com.refactoring.beans.RegularPrice;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
